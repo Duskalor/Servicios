@@ -4,7 +4,7 @@ import { del } from "../features/Servicios/ServicioSlice";
 export default function Service({ dato }) {
   //console.log(dato);
   const { id, diagnostico, estado } = dato;
-  del;
+
   const Dispatch = useDispatch();
   return (
     <div>
