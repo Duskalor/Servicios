@@ -16,7 +16,7 @@ export default function Estado() {
       {estados.map((estado) => {
         return (
           <option value={estado.estado} key={estado.id}>
-            {estado.estado}
+            <h3>{estado.estado}</h3>
           </option>
         );
       })}

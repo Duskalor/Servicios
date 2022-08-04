@@ -21,7 +21,7 @@ const servicioSlice = createSlice({
       console.log(action.payload);
     },
     del: (state, action) => {
-      const dato = state.find((state) => state.id == action.payload);
+      const dato = state.find((state) => state.id === action.payload);
       if (dato) {
         state.splice(state.indexOf(dato), 1);
       }
