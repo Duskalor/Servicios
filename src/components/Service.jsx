@@ -1,5 +1,6 @@
 import React from "react";
 import { useDispatch } from "react-redux";
+import { Link } from "react-router-dom";
 import { del } from "../features/Servicios/ServicioSlice";
 export default function Service({ dato }) {
   //console.log(dato);
@@ -7,12 +8,18 @@ export default function Service({ dato }) {
 
   const Dispatch = useDispatch();
   return (
-    <div>
-      <h2>id :{id}</h2>
-      <p>diagnostico :{diagnostico}</p>
-      <h3>estado :{estado}</h3>
-      <button>Editar</button>
-      <button onClick={() => Dispatch(del(id))}>Eliminar</button>
-    </div>
+    <tbody>
+      <tr>
+        <td>{id}</td>
+        <td>{diagnostico}</td>
+        <td>{estado}</td>
+        <td>
+          <Link to={"/edit/" + id}>Editar</Link>
+        </td>
+        <td>
+          <button onClick={() => Dispatch(del(id))}>Eliminar</button>
+        </td>
+      </tr>
+    </tbody>
   );
 }

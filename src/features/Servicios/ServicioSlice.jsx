@@ -21,14 +21,17 @@ const servicioSlice = createSlice({
       console.log(action.payload);
     },
     del: (state, action) => {
-      const dato = state.find((state) => state.id == action.payload);
+      const dato = state.find((state) => state.id === action.payload);
       if (dato) {
         state.splice(state.indexOf(dato), 1);
       }
+    },
+    edit: (state, action) => {
+      console.log(state, action);
     },
   },
 });
 
 export const AllServicios = (state) => state.servicio;
-export const { add, del } = servicioSlice.actions;
+export const { add, del, edit } = servicioSlice.actions;
 export default servicioSlice.reducer;
